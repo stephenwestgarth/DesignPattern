@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,17 @@ namespace DesignPatternSampleProject.Controllers
 {
     public class HomeController : Controller
     {
+        private UnitOfWork uow;
+
+        public HomeController()
+        {
+            uow = new UnitOfWork();
+        }
+
+        
         public ActionResult Index()
         {
+           
             return View();
         }
 
