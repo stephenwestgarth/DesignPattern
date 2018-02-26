@@ -77,7 +77,7 @@ namespace DesignPatternSampleProject.Controllers
         [HttpPost]
         public ActionResult Delete(int id, CustomerViewModel collection)
         {
-            _UOW.CustomerRepository.Delete(collection.ToModel());
+            _UOW.CustomerRepository.Delete(id);
             _UOW.Save();
             return RedirectToAction("Index");
         }

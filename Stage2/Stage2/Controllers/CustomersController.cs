@@ -10,10 +10,9 @@ using DAL;
 
 namespace Stage2.Controllers
 {
-    public class CustomersController : Controller
+    public class CustomersController : BaseController
     {
-        private DesignPatternSampleEntities db = new DesignPatternSampleEntities();
-
+        
         // GET: Customers
         public ActionResult Index()
         {

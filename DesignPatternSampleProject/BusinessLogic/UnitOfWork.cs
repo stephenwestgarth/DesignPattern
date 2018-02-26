@@ -9,32 +9,15 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public class UnitOfWork : IDisposable
+    public partial class UnitOfWork : IDisposable
     {
         private DesignPatternSampleEntities context;
-        private Generic<Customer, CustomerModel> customerRepository;
-        private Generic<Country, CountryModel> countryRepository;
+       
 
         public UnitOfWork()
         {
             context = new DesignPatternSampleEntities();
         }
-
-        public Generic<Customer, CustomerModel> CustomerRepository
-        {
-            get
-            {
-                return this.customerRepository ?? new Generic<Customer, CustomerModel>(context);
-            }
-        }
-
-       
-
-
-
-
-
-
 
         public void Save()
         {
